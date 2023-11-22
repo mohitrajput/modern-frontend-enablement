@@ -17,7 +17,27 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+fetch(endpoint)
+      .then(response => response.json())
+      .then(data => {
+        const cities = data;
+        const searchInput = document.querySelector('.search');
+        const List = document.querySelector('.suggestions');
+        searchInput.addEventListener('input', displayMatchList);
 
+        function displayMatchList() {
+          const inputValue = searchInput.value.toLowerCase();
+          const filteredCities = cities.filter(city => {
+            const stateName = city.state.toLowerCase();
+            const cityName = city.city.toLowerCase();
+            return cityName.includes(inputValue) || stateName.includes(inputValue);
+          });
+
+          const listContent = filteredCities.map(place => `<li>${place.city}, ${place.state}</li>`).join('');
+          List.innerHTML = listContent;
+        }
+      })
+      .catch(error => console.error('Error:', error));
 </script>
 </body>
 </html>
