@@ -17,7 +17,20 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-
+fetch(endpoint)
+      .then(response => response.json())
+      .then(data => {
+        let places = data;
+        let list = document.querySelector(".suggestions");
+        let input = document.querySelector(".search");
+        input.addEventListener("input",() =>{
+          let selecteddata = places.filter(place =>{
+            return place.state.includes(input.value) || place.city.includes(input.value);
+          })
+          list.innerHTML = selecteddata.map(place => `<li>${place.city}, ${place.state}</li>`).join('');
+        });
+      })
+      .catch(error => console.error('Error:', error));
 </script>
 </body>
 </html>

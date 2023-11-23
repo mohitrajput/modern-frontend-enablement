@@ -38,17 +38,39 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-
+      var inventorsList = inventors.filter(investor =>{
+        if(investor.year <1600 && investor.year > 1500)
+        {
+         return investor;
+        }
+      })
+      console.log("1",inventorsList);
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-
+      var inventorsList = inventors.map(investor =>{
+        return investor.first +' ' + investor.last;
+      })
+      console.log("2",inventorsList);
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    var inventorsList = inventors.slice().sort((inventor1 , inventor2) => {
+      return inventor1.year - inventor2.year;
+    })
+      console.log("3",inventorsList);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    // var totalAge = 0; 
+    var inventorsList = inventors.reduce((totalAge,investor) =>{
+      return totalAge+(investor.passed - investor.year);
+    },0)
+    console.log("4",inventorsList);
 
     // 5. Sort the inventors by years lived
+    var inventorsList = inventors.sort((investor1,investor2) =>{
+      return (investor1.passed - investor1.year) - (investor2.passed - investor2.year) ;
+    },0)
+    console.log("5",inventorsList);
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -59,8 +81,16 @@
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+    var object = {};
+    let dataObject = data.reduce((object,data) => {
+      if(data in object)
+      object[data] = object[data] + 1;
+      else
+      object[data] = 0;
+      return object;
+    },{})
+    console.log("8",dataObject);
   </script>
 </body>
 </html>
