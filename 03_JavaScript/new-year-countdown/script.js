@@ -1,0 +1,24 @@
+var days = document.querySelector("#days");
+var hours = document.querySelector("#hours");
+var minutes = document.querySelector("#minutes");
+var seconds = document.querySelector("#seconds");
+var loading = document.querySelector("#loading");
+var countdown = document.querySelector("#countdown");
+loading.style.display = "none";
+countdown.style.display = "flex";
+setInterval(() => {
+    var presentDate = new Date();
+    var newYear = new Date(presentDate.getFullYear()+1, 0, 1);
+    var timeRemainng = newYear - presentDate;
+    var daysRemaining = Math.trunc(timeRemainng/(1000*60*60*24));
+    var hoursRemaining = Math.trunc(timeRemainng/(1000*60*60));
+    var minutesRemaining = Math.trunc(timeRemainng/(1000*60));
+    var secondsRemaining = Math.trunc(timeRemainng/1000);
+    var newHour = hoursRemaining - daysRemaining*24 ;
+    var newMin = minutesRemaining - hoursRemaining*60 ;
+    var newSec = secondsRemaining - minutesRemaining*60 ;
+    days.innerHTML = daysRemaining;
+    hours.innerHTML = newHour;
+    minutes.innerHTML = newMin
+    seconds.innerHTML = newSec;
+  }, 1000);
