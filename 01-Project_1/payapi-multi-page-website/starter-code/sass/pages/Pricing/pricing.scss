@@ -1,0 +1,85 @@
+.pricing{
+    grid-column: 2/12;
+    grid-row: 2/3;
+    .heading-1{
+        font-size: 5.6rem;
+    }
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 5.6rem;
+        grid-gap: 3rem;
+        &_item{
+            .plan_type{
+                color: $color-pink-dark;
+                font-family: $font-heading;
+                font-size: 3.2rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 40px;
+                letter-spacing: -0.246px;
+            }
+            .text--light{
+                padding: 1.6rem 0 0.8rem 0;
+            }
+            h3{
+                padding-bottom: 2.4rem;
+                &::after{
+                    @include border-after;
+                }
+            }
+            .plan-wrap{
+                .plan{
+                    display: flex;
+                    gap: 2rem;
+                    align-items: center;
+                    .check{
+                        width: 14px;
+                        height: 12px;
+                    }
+                    .text--light{
+                        opacity: 0.9;
+                    }
+                    .opaque{
+                        opacity: 0.5;
+                    }
+                }
+                 &::after{
+                    @include border-after;
+                }
+            }
+            .btn{
+                @include subscribe-btn(transparent, #36536B, #36536B, #fff);
+                border: 1px solid #36536B;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+ @media only screen and (max-width: $bp-small) {
+    .pricing{
+        grid-column: 2/12;
+        grid-row: 2/7;
+        &__wrapper{
+            display: block;
+        }
+    }
+
+}
+
+.input-wrap + .error-field {
+    display: none;
+}
+.input-wrap.error + .error-field {
+    display: block; 
+}
+.input-wrap.error::after{
+    background-color: red !important;
+}
+.input-wrap.error input::placeholder{
+    color: red;
+}
+.input-wrap input:focus{
+    outline: none;
+}

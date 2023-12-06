@@ -1,0 +1,33 @@
+.banner{
+    grid-row: 2/3;
+    grid-column: 2/12;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    &__content{
+        grid-column: 1/6;
+        align-self: center;
+        &--text{
+            font-family: 'DM Serif Display';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 72px;
+            letter-spacing: -0.553846px;
+            color: #36536B;
+        }
+        .schedule_btn_wrap{
+            @include schedule-button;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
+        .text--light{
+            padding-left: 2rem;;
+        }
+    }
+
+    &__img{
+        grid-column: 8/11;
+        z-index: 1000;
+        height: 100%;
+    }
+}

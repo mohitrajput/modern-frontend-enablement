@@ -1,0 +1,59 @@
+:root{
+    --body-color: #fff;
+}
+.dark-theme{
+    --body-color: #2B2C37;
+}
+
+@media screen and (max-width:776px){
+    .heading_xl{
+        font-size: 18px;
+    }
+    .cmn_input{
+        width: 344px;
+    }
+    .Kanban_main_wrapper {
+        grid-template-columns: 50px 1fr;
+        grid-template-rows: 64px calc(100vh - 64px);
+        position: relative;
+    }
+    .Kanban_main_wrapper .left_header {
+        padding-left: 16px;
+    }
+    .Kanban_main_wrapper .left_header .logo_desktop,
+    .Kanban_main_wrapper .right_header .add_task_section .add_btn_desktop{
+        display: none;
+    }
+    .Kanban_main_wrapper .left_header .logo_mobile,
+    .Kanban_main_wrapper .right_header .add_task_section .add_btn_mobile{
+        display: block;
+        cursor: pointer;
+    }
+    .Kanban_main_wrapper .right_header .add_task_section {
+        gap: 16px;
+    }
+    .Kanban_main_wrapper .right_header {
+        padding-right: 20px;
+    }
+    .top_nav ul a {
+        width: 248px;
+    }
+    .Kanban_main_wrapper .right_header .add_task_section img {
+        padding: 4px 1px 0 1px;
+    }
+    .Kanban_main_wrapper .kanban_sidebar{
+        position: absolute;
+        top: 2px;
+        left: 50px;;
+        z-index: 1;
+        width: 264px;
+        height: auto;
+        border-radius: 8px;
+        background: var(--body-color);
+        box-shadow: 0px 10px 20px 0px rgba(54, 78, 126, 0.25);
+    }
+
+    .Kanban_main_wrapper .kanban_content_wrapper{
+        grid-column: 1/-1;
+    }
+}

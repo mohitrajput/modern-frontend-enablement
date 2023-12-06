@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Frontend Mentor | Kanban task management web app</title>
+</head>
+<body>
+  <main class="Kanban_main_wrapper">
+
+    <div class="left_header">  
+      <a href="#">
+        <img class="logo_desktop" src="./assets/logo-light.svg" alt="logo">
+        <img class="logo_mobile" src="./assets/logo-mobile.svg" alt="logo">
+      </a>
+    </div>
+    <div class="right_header">
+      <h2 class="heading_xl">Plantform Launch</h2>
+      <div class="add_task_section">
+        <button class="btn_primary add_btn add_btn_desktop" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add Task</button>
+        <svg class="add_btn add_btn_mobile" data-bs-toggle="modal" data-bs-target="#addTaskModal" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="none">
+          <rect width="48" height="32" rx="16" fill="#635FC7"/>
+          <path d="M25.368 22V17.344H30V14.632H25.368V10H22.656V14.632H18V17.344H22.656V22H25.368Z" fill="white"/>
+        </svg>
+        <img id="ellipseToggle" src="./assets/icon-vertical-ellipsis.svg" alt="">
+        <div class="add_task_sidenav" style="display: none;">
+          <p class="p_text" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Board</p>
+          <p class="p_text" style="color: #EA5555;">Delete Board</p>
+        </div>
+      </div>
+    </div>
+
+      <section class="kanban_sidebar">
+        <nav class="top_nav">
+          <ul>
+              <li>
+                <a href="#"><span>ALL BOARDS (3)</span></a>
+              </li>
+              <li class="blank_list"></li>
+              <!-- <li>
+                <a class="tab-btn active" data-id="platform" href="#"><img class="active-img" src="./assets/icon-board.svg" alt="icon b0ard"><span>Platform Launch</span></a>
+              </li>
+              <li>
+                <a class="tab-btn" data-id="marketing" href="#"><img src="./assets/icon-board.svg" alt="icon b0ard"><span>Marketing Plan</span></a>
+              </li>
+              <li>
+                <a class="tab-btn" data-id="roadmap" href="#"><img src="./assets/icon-board.svg" alt="icon b0ard"><span>Roadmap</span></a>
+              </li> -->
+              <li>
+                <a class="new_board_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><img src="./assets/icon-board.svg" alt="icon b0ard"><span>+ Create New Board</span></a>
+              </li>
+          </ul>
+        </nav>
+        <nav class="bottom_nav">
+          <div class="light_mode">
+            <img width="16" height="16"  src="./assets/icon-light-theme.svg" alt="light theme">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="themeSwitch">
+            </div>
+            <img width="16" height="16"  src="./assets/icon-dark-theme.svg" alt="dark theme">
+          </div>
+          <div class="hide_nav">
+            <img src="./assets/icon-hide-sidebar.svg" alt="hide siderbar">
+            <span class="grey_text">Hide Sidebar</span>
+          </div>
+        </nav>
+      </section>
+
+      <article class="kanban_content_wrapper">
+        <section class="kanban_content active" id="platform">
+          <div class="item2 vertical_car">
+            <div class="card_heading">
+              <span class="circle"></span>
+              <p class="p_text">TODO(4)</p>
+            </div>
+            <div class="card_content">
+              <p class="task_title heading_xl">Build UI on onboarding flow.</p>
+              <p class="subtask_title p_text">0 of 3 subtasks</p>
+            </div>
+          </div>
+          <div class="item1 vertical_car">
+             <div class="card_heading">
+              <span class="circle"></span>
+              <p class="p_text">TODO(4)</p>
+            </div>
+            <div class="card_content">
+              <p class="task_title heading_xl">Build UI on onboarding flow.</p>
+              <p class="subtask_title p_text">0 of 3 subtasks</p>
+            </div>
+            <div class="card_content">
+              <p class="task_title heading_xl">Build UI for search.</p>
+              <p class="subtask_title p_text">0 of 3 subtasks</p>
+            </div>
+            <div class="card_content">
+              <p class="task_title heading_xl">Create template structures</p>
+              <p class="subtask_title p_text">0 of 3 subtasks</p>
+            </div>
+          </div>
+          <svg class="close_nav d-none" title="Show Sidebar" xmlns="http://www.w3.org/2000/svg" width="56" height="48" viewBox="0 0 56 48" fill="none">
+            <path d="M0 0H32C45.2548 0 56 10.7452 56 24C56 37.2548 45.2548 48 32 48H0V0Z" fill="#635FC7"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M33.8154 23.4342C32.2491 20.7764 29.328 19 26 19C22.6706 19 19.7501 20.7776 18.1846 23.4342C17.9385 23.8519 17.9385 24.3703 18.1846 24.788C19.7509 27.4458 22.6719 29.2222 26 29.2222C29.3294 29.2222 32.2499 27.4446 33.8154 24.788C34.0615 24.3703 34.0615 23.8519 33.8154 23.4342ZM26 27.8889C23.9122 27.8889 22.2222 26.1992 22.2222 24.1111C22.2222 22.0233 23.9118 20.3333 26 20.3333C28.0878 20.3333 29.7778 22.0229 29.7778 24.1111C29.7778 26.1989 28.0882 27.8889 26 27.8889ZM26 27C27.5955 27 28.8889 25.7066 28.8889 24.1111C28.8889 22.5156 27.5955 21.2222 26 21.2222C25.5081 21.2222 25.045 21.3453 24.6396 21.5621L24.6405 21.5621C25.2975 21.5621 25.8301 22.0947 25.8301 22.7516C25.8301 23.4086 25.2975 23.9412 24.6405 23.9412C23.9836 23.9412 23.451 23.4086 23.451 22.7516L23.451 22.7507C23.2342 23.1561 23.1111 23.6192 23.1111 24.1111C23.1111 25.7066 24.4045 27 26 27Z" fill="white"/>
+          </svg>
+        </section>
+
+         <section class="kanban_content d-none" id="marketing">
+          <div class="item2 vertical_car">Tab 2 Content 1</div>
+          <div class="item1 vertical_car">Tab 2 Content 2</div>
+          <svg class="close_nav d-none" title="Show Sidebar" xmlns="http://www.w3.org/2000/svg" width="56" height="48" viewBox="0 0 56 48" fill="none">
+            <path d="M0 0H32C45.2548 0 56 10.7452 56 24C56 37.2548 45.2548 48 32 48H0V0Z" fill="#635FC7"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M33.8154 23.4342C32.2491 20.7764 29.328 19 26 19C22.6706 19 19.7501 20.7776 18.1846 23.4342C17.9385 23.8519 17.9385 24.3703 18.1846 24.788C19.7509 27.4458 22.6719 29.2222 26 29.2222C29.3294 29.2222 32.2499 27.4446 33.8154 24.788C34.0615 24.3703 34.0615 23.8519 33.8154 23.4342ZM26 27.8889C23.9122 27.8889 22.2222 26.1992 22.2222 24.1111C22.2222 22.0233 23.9118 20.3333 26 20.3333C28.0878 20.3333 29.7778 22.0229 29.7778 24.1111C29.7778 26.1989 28.0882 27.8889 26 27.8889ZM26 27C27.5955 27 28.8889 25.7066 28.8889 24.1111C28.8889 22.5156 27.5955 21.2222 26 21.2222C25.5081 21.2222 25.045 21.3453 24.6396 21.5621L24.6405 21.5621C25.2975 21.5621 25.8301 22.0947 25.8301 22.7516C25.8301 23.4086 25.2975 23.9412 24.6405 23.9412C23.9836 23.9412 23.451 23.4086 23.451 22.7516L23.451 22.7507C23.2342 23.1561 23.1111 23.6192 23.1111 24.1111C23.1111 25.7066 24.4045 27 26 27Z" fill="white"/>
+          </svg>
+        </section>
+
+         <section class="kanban_content d-none" id="roadmap">
+          <div class="item2 vertical_car">2</div>
+          <div class="item1 vertical_car">1</div>
+          <svg class="close_nav d-none" title="Show Sidebar" xmlns="http://www.w3.org/2000/svg" width="56" height="48" viewBox="0 0 56 48" fill="none">
+            <path d="M0 0H32C45.2548 0 56 10.7452 56 24C56 37.2548 45.2548 48 32 48H0V0Z" fill="#635FC7"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M33.8154 23.4342C32.2491 20.7764 29.328 19 26 19C22.6706 19 19.7501 20.7776 18.1846 23.4342C17.9385 23.8519 17.9385 24.3703 18.1846 24.788C19.7509 27.4458 22.6719 29.2222 26 29.2222C29.3294 29.2222 32.2499 27.4446 33.8154 24.788C34.0615 24.3703 34.0615 23.8519 33.8154 23.4342ZM26 27.8889C23.9122 27.8889 22.2222 26.1992 22.2222 24.1111C22.2222 22.0233 23.9118 20.3333 26 20.3333C28.0878 20.3333 29.7778 22.0229 29.7778 24.1111C29.7778 26.1989 28.0882 27.8889 26 27.8889ZM26 27C27.5955 27 28.8889 25.7066 28.8889 24.1111C28.8889 22.5156 27.5955 21.2222 26 21.2222C25.5081 21.2222 25.045 21.3453 24.6396 21.5621L24.6405 21.5621C25.2975 21.5621 25.8301 22.0947 25.8301 22.7516C25.8301 23.4086 25.2975 23.9412 24.6405 23.9412C23.9836 23.9412 23.451 23.4086 23.451 22.7516L23.451 22.7507C23.2342 23.1561 23.1111 23.6192 23.1111 24.1111C23.1111 25.7066 24.4045 27 26 27Z" fill="white"/>
+          </svg>
+        </section>
+
+      </article>
+  </main>
+
+  <!-- board modal -->
+  <div class="modal fade add_board_modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title heading_xl font_18">Add New Board</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <img src="./assets/icon-cross.svg" alt="cross icon">
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" class="board-form">
+            <div class="form-group">
+              <label class="p_text" for="create_board">BoardName</label>
+              <input class="cmn_input" type="text" placeholder="e.g. web Design">
+            </div>
+          </form>
+          <div class="board_col_container">
+            <p class="p_text">BoardColumns</p>  
+            <div class="col_input_wrap">
+              <input class="cmn_input" type="text" placeholder="e.g. Todo">
+              <img src="./assets/icon-cross.svg" alt="cross icon">
+            </div>
+            <div class="col_input_wrap">
+              <input class="cmn_input" type="text" placeholder="e.g. Todo">
+              <img src="./assets/icon-cross.svg" alt="cross icon">
+            </div>
+            <div class="col_input_wrap">
+              <input class="cmn_input" type="text" placeholder="e.g. Todo">
+              <img src="./assets/icon-cross.svg" alt="cross icon">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn_primary add_col_btn">+ Add New Column</button>
+          <button type="button" class="btn_primary add_board_btn">Create New Board</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- board modal end -->
+
+  <!-- add task modal -->
+  <div class="modal fade add_board_modal" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="addTaskModal"       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title heading_xl font_18">Add New Task</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <img src="./assets/icon-cross.svg" alt="cross icon">
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" class="board-form">
+            <div class="form-group">
+              <label class="p_text" for="create_board">Title</label>
+              <input class="cmn_input" type="text" placeholder="e.g. web Design">
+            </div>
+            <div class="form-group">
+              <label class="p_text" for="add_desc">Description</label>
+              <textarea class="cmn_input" type="text" placeholder="e.g. It's always good to take a break. 
+                        This 15 minute break will recharge the batteries a little.">
+              </textarea>
+            </div>
+            <div class="board_col_container">
+              <p class="p_text">SubTasks</p>  
+              <div class="col_input_wrap">
+                <input class="cmn_input" type="text" placeholder="e.g. Todo">
+                <img src="./assets/icon-cross.svg" alt="cross icon">
+              </div>
+              <div class="col_input_wrap">
+                <input class="cmn_input" type="text" placeholder="e.g. Todo">
+                <img src="./assets/icon-cross.svg" alt="cross icon">
+              </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn_primary add_col_btn">+ Add New SubTask</button>
+          <div class="col_input_wrap">
+            <label class="p_text" for="status">Status</label>
+            <select class="cmn_input" name="" id="">
+              <option value="">Todo</option>
+              <option value="">Doing</option>
+              <option value="">Done</option>
+            </select>
+          </div>
+          <button type="button" class="btn_primary add_board_btn">Create New Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- add task modal end -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

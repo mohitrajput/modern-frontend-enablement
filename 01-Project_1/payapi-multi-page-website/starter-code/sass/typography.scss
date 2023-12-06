@@ -1,0 +1,56 @@
+$font-text: 'Public Sans';
+$font-heading: 'DM Serif Display';
+
+%heading{
+    font-family: $font-heading;
+    font-weight: 700;
+    font-style: normal
+}
+
+%text{
+    font-family: $font-text;
+    font-weight: 400;
+    font-style: normal;
+    color: $color-circle-dark;
+    line-height: 2.5rem;
+}
+
+.heading-1{
+    @extend %heading;
+    font-size: 7.2rem;
+    color: $color-circle-dark;
+    letter-spacing: -0.553846px;
+}
+
+.heading-3{
+    @extend %heading;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+    letter-spacing: -0.369231px;
+
+    &--dark{
+        color: $color-circle-dark;
+    }
+
+    &--light{
+        color: $color-text-white;
+    }
+}
+
+.text{
+    &--dark{
+        font-weight: 700;
+        font-size: 1.8rem;
+        letter-spacing: -0.138462px;
+    }
+
+    &--light{
+        mix-blend-mode: normal;
+        opacity: 0.7;   
+        letter-spacing: -0.115385px;
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: $font-text;
+        color: $color-circle-dark;
+    }
+}

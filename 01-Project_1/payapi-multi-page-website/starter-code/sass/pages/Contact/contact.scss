@@ -1,0 +1,86 @@
+.contact-section{
+    grid-column: 2/-1;
+    grid-row: 2/5;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 3rem;
+    .heading-1{
+        grid-column: 1/8    ;
+        grid-row: 1/2;
+        font-size: 5.6rem;
+        line-height: 5.6rem;
+    }
+    .contact-form{
+        grid-column: 1/6;
+        grid-row: 2/3;
+        form{
+            .input-wrap{
+                width: 445px;
+                height: 42px;
+                margin-bottom: 24px;
+                input{
+                    width: 367px;
+                    padding: 0 55px 0px 22px;
+                    color: #36536B;
+                    font-family: Public Sans;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 25px; /* 166.667% */
+                    letter-spacing: -0.115px;
+                    border: none;
+                    background-color: transparent;
+                }
+                &::after{
+                    @include border-after;
+                }
+            }
+            .input-wrap-checkbox{
+                padding: 24px 17px;
+                display: flex;
+                gap: 2rem;
+            }
+            .btn{
+                @include subscribe-btn(transparent, #36536B, #36536B, #fff);
+                border: 1px solid #36536B;
+                box-shadow: none;
+                width: 152px;
+            }
+        }
+    }
+    .contact-companies{
+        grid-column: 6/12;
+        grid-row: 2/3;
+        /* background-color: red; */
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        .text{
+            grid-column: 2/8;
+            grid-row: 2/3;
+            color: #36536B;
+            font-family: DM Serif Display;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px; /* 133.333% */
+            letter-spacing: -0.185px;
+        }
+        .contact__companies{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .one{
+            grid-column: 2/10;
+            grid-row: 3/4;
+        }
+        .two{
+            grid-column: 2/10;
+            grid-row: 4/5;
+        }
+    }
+}

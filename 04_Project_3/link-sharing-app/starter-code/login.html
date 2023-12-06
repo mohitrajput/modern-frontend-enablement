@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Login Screen</h2>
+            <form action="#">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                </div>
+                <div class="text-center">
+                    <button type="button" id="save_btn" onclick="saveData()" class="btn btn-primary">Submit</button>
+                    <button type="reset" id="reset_btn" class="btn btn-secondary">Reset</button>
+                    <button type="button" id="register_btn" onclick="register()" class="btn btn-primary">Register Yourself</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function saveData(){
+            let email = document.querySelector("#email").value;
+            let password = document.querySelector("#password").value;
+            let user_records = new Array();
+            user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
+            
+            if(user_records.some((v)=>{
+                return v.email == email && v.password == password
+            })){
+                let current_user = user_records.filter((v)=>{
+                    return v.email == email && v.password == password
+                })[0];
+                localStorage.setItem("name", current_user.name);
+                localStorage.setItem("email", current_user.email);
+                window.location.href = "index.html";
+            }else{
+                alert("logged in failed");
+            }
+        }
+
+        function register(){
+            window.location.href = "registration.html";
+        }
+    </script>
+</body>
+</html>

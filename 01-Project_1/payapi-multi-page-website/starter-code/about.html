@@ -5,58 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Frontend Mentor | PayAPI Website Challenge</title>
   </head>
 
   <body>
-    Pricing
-    About
-    Contact
-    Schedule a Demo
+     <main class="container">
+      <header class="header">
+        <div class="header__img">
+            <a href="/">
+              <img class="logo" src="./assets/shared/desktop/logo.svg" alt="logo">
+            </a>
+          </div>
+          <ul class="nav">
+          <img class="icon-close" src="./assets/shared/mobile/close.svg" alt="logo">
+          <div class="nav-inner">
+            <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+          </div>
+           <div class="header-button">
+            <button class="btn">Schedule a demo</button>
+          </div>
+        </ul>
+        <img class="icon-menu" src="./assets/shared/mobile/menu.svg" alt="logo">
+      </header>
 
-    We empower innovators by delivering access to the financial system
+      <div class="about_main_wrapper">
+        <section class="about-vision">
+          <div class="item1">
+            <h1 class="heading-1">We empower innovators
+              by delivering access to the financial system
+            </h1>
+          </div>
+          <div class="item2">
+            <h3 class="heading-3">Our Vision</h3>
+          </div>
+          <div class="item3">
+            <p class="text--light">
+              Our main goal is to build beautiful consumer experiences along with developer-friendly infrastructure. The result is an intelligent tool that gives everyone the ability to create amazing products that solve big problems. We are deeply focused on democratizing financial services through technology. 
+            </p>
+          </div>
+          <div class="item4">
+            <h3 class="heading-3">
+              Our Business
+            </h3>
+          </div>
+          <div class="item5">
+            <p class="text--light">
+              At the core of our platform is the technical infrastructure APIs that connect consumers. Our innovative product provides key insights for businesses and individuals, as well as robust reporting for traditional financial institutions and developers. 
+            </p>
+          </div>
+        </section>
+        <section class="img-section">
+          <img src="./assets/about/desktop/image-team-members.jpg" alt="about image">
+        </section>
+        <section class="about-count">
+          <div class="count1">300+</div>
+          <div class="count2">3</div>
+          <div class="count3">10M+</div>
+        </section>
+        <section class="about-ready-to-start">
+          <h2 class="heading-1">Ready to Start?</h2>
+          <div class="scheule_btn_wrap">
+            <input placeholder="Enter Start Typing" />
+            <button>Schedule a Demo</button>
+          </div>
+        </section>
+      </div>
 
-    Our Vision
-
-    Our main goal is to build beautiful consumer experiences along with developer-friendly 
-    infrastructure. The result is an intelligent tool that gives everyone the ability to create 
-    amazing products that solve big problems. We are deeply focused on democratizing financial 
-    services through technology.
-
-    Our Business
-
-    At the core of our platform is the technical infrastructure APIs that connect consumers. 
-    Our innovative product provides key insights for businesses and individuals, as well as 
-    robust reporting for traditional financial institutions and developers.
-
-    Team Members 
-    300+
-
-    Offices in the US 
-    3
-
-    Transactions analyzed 
-    10M+
-
-    The Culture
-
-    We strongly believe there's always an opportunity to learn from each other outside of 
-    day-to-day work, whether it's company-wide offsites, internal hackathons, or co-worker meetups. 
-    We always value cross-team collaboration and diversity of thought, no matter the job title.
-
-    The People
-    
-    We're all passionate about building a more efficient and inclusive financial infrastructure 
-    together. At PayAPI, we have diverse backgrounds and skills.
-
-    Ready to start? 
-    Enter email address 
-    Schedule a Demo
-
-    Pricing
-    About
-    Contact
+      <footer class="footer">
+        <nav class="left-footer">
+          <ul>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/bg-white-logo.svg" alt="logo">
+              </a>
+            </li>
+            <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="right-footer">
+          <ul>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/facebook.svg" alt="facebook">
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/twitter.svg" alt="twitter">
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/linkedin.svg" alt="linkedin">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </main>
   </body>
 
 </html>
+
+<script>
+  var navigation = document.querySelector(".nav");
+  var openMenu = document.querySelector(".icon-menu");
+  var closeMenu = document.querySelector(".icon-close");
+
+  openMenu.addEventListener('click',function(){
+    navigation.style.right = '0px';
+  })
+  closeMenu.addEventListener('click',function(){
+    navigation.style.right = '-300px';
+  })
+</script>

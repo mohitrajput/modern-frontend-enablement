@@ -5,35 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Frontend Mentor | PayAPI Website Challenge</title>
   </head>
 
   <body>
-    Pricing
-    About
-    Contact
-    Schedule a Demo
-
-    Submit a help request and we’ll get in touch shortly.
-    
-    Name
-    Email Address
-    Company Name
-    Title
-    Message
-    Stay up-to-date with company announcements and updates to our API
-    Submit
-
-    Join the thousands of innovators already building with us
-
-    Ready to start? 
-    Enter email address 
-    Schedule a Demo
-
-    Pricing
-    About
-    Contact
+     <main class="container">
+      <header class="header">
+        <div class="header__img">
+            <a href="/">
+              <img class="logo" src="./assets/shared/desktop/logo.svg" alt="logo">
+            </a>
+          </div>
+          <ul class="nav">
+          <img class="icon-close" src="./assets/shared/mobile/close.svg" alt="logo">
+          <div class="nav-inner">
+            <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+          </div>
+           <div class="header-button">
+            <button class="btn">Schedule a demo</button>
+          </div>
+        </ul>
+        <img class="icon-menu" src="./assets/shared/mobile/menu.svg" alt="logo">
+      </header>
+      <section class="contact-section">
+        <h2 class="heading-1">
+          Submit a help request and we'll get in touch shortly.
+        </h2>
+        <div class="contact-form">
+          <form>
+            <div class="input-wrap">
+              <input type="text" name="name" id="name" placeholder="Name" onkeyup="validateForm()">
+            </div>
+            <p class="error-field">This is required field</p>
+            <div class="input-wrap">
+              <input type="text" name="email" id="email" placeholder="Email Address">
+            </div>
+            <p class="error-field">This is required field</p>
+            <div class="input-wrap">
+              <input type="text" name="company_name" id="company_name" placeholder="Company">
+            </div>
+            <div class="input-wrap">
+              <input type="text" name="title" id="title" placeholder="Title">
+            </div>
+            <div class="input-wrap">
+              <input type="textarea" name="message" id="message" placeholder="Message">
+            </div>
+            <div class="input-wrap-checkbox">
+              <input type="checkbox" name="termscondition" id="termscondition">
+              <label class="text--light" for="termscondition">Stay up-to-date with company announcements and <br> updates to our API</label>
+            </div>
+            <button class="btn">Submit</button>
+          </form>
+        </div>
+        <div class="contact-companies">
+          <p class="text">
+            Join the thousands of innovators already building with us
+          </p>
+           <div class="contact__companies one">
+            <img class="contact__companies--img" src="./assets/contact/tesla.svg" alt="">
+            <img class="contact__companies--img" src="./assets/contact/microsoft.svg" alt="">
+            <img class="contact__companies--img" src="./assets/contact/hp.svg" alt="">
+          </div>
+          <div class="contact__companies two">
+            <img class="contact__companies--img" src="./assets/contact/oracle.svg" alt="">
+            <img class="contact__companies--img" src="./assets/contact/google.svg" alt="">
+            <img class="contact__companies--img" src="./assets/contact/nvidia.svg" alt="">
+          </div>
+        </div>
+      </section>
+       <section class="ready-to-start">
+         <h2 class="heading-1">Ready to Start?</h2>
+          <div class="schedule_btn_wrap">
+            <input placeholder="Enter Start Typing" />
+            <button>Schedule a Demo</button>
+          </div>
+      </section>
+       <footer class="footer">
+        <nav class="left-footer">
+          <ul>
+            <li>
+               <a href="/">
+                <img class="logo" src="./assets/shared/desktop/bg-white-logo.svg" alt="logo">
+              </a>
+            </li>
+            <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="right-footer">
+          <ul>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/facebook.svg" alt="facebook">
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/twitter.svg" alt="twitter">
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/linkedin.svg" alt="linkedin">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </main>
   </body>
 
 </html>
+
+<script>
+  var navigation = document.querySelector(".nav");
+  var openMenu = document.querySelector(".icon-menu");
+  var closeMenu = document.querySelector(".icon-close");
+
+  openMenu.addEventListener('click',function(){
+    navigation.style.right = '0px';
+  })
+  closeMenu.addEventListener('click',function(){
+    navigation.style.right = '-300px';
+  })
+
+  var eleName = document.querySelector("#name");
+  function validateForm(){
+    if(eleName.value == ""){
+      eleName.closest('.input-wrap').classList.add("error");
+    }else{
+      eleName.closest('.input-wrap').classList.remove("error");
+    }
+  }
+</script>

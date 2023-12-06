@@ -38,15 +38,29 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    const personInFifCentury = inventors.filter((item) =>  item.year < 1600 && item.year > 1499 )
+    console.log(personInFifCentury);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+    const firstAndLast = inventors.map((person)=>{
+      return [{firstName: person.first, lastName: person.last}]
+    })
+    console.log(firstAndLast);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const oldToYoung = inventors.sort((youngPerson, oldPerson) => oldPerson.year - youngPerson.year);
+    console.log(oldToYoung);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    let totalYearsLived = 0;
+    for (const inventor of inventors) {
+      totalYearsLived += inventor.passed - inventor.year;
+    }
+
+    console.log(totalYearsLived);
 
     // 5. Sort the inventors by years lived
 
@@ -56,6 +70,21 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const inventorsSortedByLastName = inventors.slice().sort((a, b) => {
+      // Use the `last` property for comparison
+      const lastNameA = a.last.toUpperCase(); // Convert to uppercase for case-insensitive sorting
+      const lastNameB = b.last.toUpperCase();
+
+      if (lastNameA < lastNameB) {i9
+        return -1;
+      }
+      if (lastNameA > lastNameB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    console.log(inventorsSortedByLastName);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these

@@ -1,0 +1,37 @@
+.footer{
+    background-color: $color-secondary;
+    grid-row: 8/9;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    .left-footer{
+        grid-column: 2/6;
+        ul{
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            .nav__item{
+                .nav__link{
+                    color: #FBFCFE;
+                    font-family: Public Sans;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    opacity: 0.7;
+                }
+            }
+        }
+    } 
+    .right-footer{
+        grid-column: 8/12;
+        ul{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 4rem;
+        }
+    }
+}

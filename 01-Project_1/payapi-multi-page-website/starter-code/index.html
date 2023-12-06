@@ -5,56 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
-
+    <link rel="stylesheet" href="css/style.css">
+    
     <title>Frontend Mentor | PayAPI Website Challenge</title>
   </head>
-
+  
   <body>
-    Pricing
-    About
-    Contact
-    Schedule a Demo
+    <main class="container">
+        <header class="header">
+          <div class="header__img">
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/logo.svg" alt="logo">
+              </a>
+            </div>
+            <ul class="nav">
+            <img class="icon-close" src="./assets/shared/mobile/close.svg" alt="logo">
+            <div class="nav-inner">
+              <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+              <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+            </div>
+            <div class="header-button">
+              <button class="btn">Schedule a demo</button>
+            </div>
+          </ul>
+          <img class="icon-menu" src="./assets/shared/mobile/menu.svg" alt="logo">
+        </header>
 
-    Start building with our APIs for absolutely free.
-    Enter email address 
-    Schedule a Demo
-    Have any questions? Contact Us
+        <section class="banner">
+          <div class="banner__content">
+            <h1 class="banner__content--text">Start building with our APIs for absolutely free.</h1>
+            <div class="schedule_btn_wrap">
+              <input placeholder="Enter Start Typing" />
+              <button>Schedule a Demo</button>
+            </div>
+            <p class="text--light">
+              Have any questions? Contact Us
+            </p>
+          </div>
+          <img class="banner__img" src="./assets/home/desktop/illustration-phone-mockup.svg" alt="">
+        </section>
 
-    Who we work with
-    Today, millions of people around the world have successfully connected 
-    their accounts to apps they love using our API. We provide developers 
-    with the tools they need to create easy and accessible experiences 
-    for their users.
-    About Us
+        <section class="wework">
+          <div class="wework__content">
+            Hello
+          </div>
+          <div class="wework__companies">
+            <img class="wework__companies--img" src="./assets/shared/desktop/tesla.svg" alt="">
+            <img class="wework__companies--img" src="./assets/shared/desktop/microsoft.svg" alt="">
+            <img class="wework__companies--img" src="./assets/shared/desktop/hewlett-packard.svg" alt="">
+            <img class="wework__companies--img" src="./assets/shared/desktop/oracle.svg" alt="">
+            <img class="wework__companies--img" src="./assets/shared/desktop/google.svg" alt="">
+            <img class="wework__companies--img" src="./assets/shared/desktop/nvidia.svg" alt="">
+          </div>
+        </section>
 
-    Easy to implement
-    Our API comes with just a few lines of code. You’ll be up and running in 
-    no time. We built our documentation page to integrate payments functionality 
-    with ease.
+        <section class="easy-implementation">
+          <img class="easy-implementation--img"  src="./assets/home/desktop/illustration-easy-to-implement.svg" alt="easy-implementation image">
+          <div class="easy-implementation--content">
+            <div class="heading-3 heading-3--dark">Easy to Implement</div>
+            <p class="text text--light">
+              Our API comes with just a few lines of code. You’ll be up and running in 
+              no time. We built our documentation page to integrate payments functionality 
+              with ease.
+            </p>
+          </div>
+        </section>
 
-    Simple UI & UX
-    Our pre-built form is easy to integrate in your app or website’s checkout 
-    flow and designed to optimize conversion.
+        <section class="ui-ux">
+          <div class="ui-ux__content">
+            <h3 class="heading-3 heading-3--dark">Simple UI & UX</h3>
+            <div class="text--light text">
+                Our pre-built form is easy to integrate in your app or website’s checkout 
+                flow and designed to optimize conversion.
+            </div>
+          </div>
+          <div class="ui-ux__img">
+            <img  src="./assets/home/desktop/illustration-simple-ui.svg" alt="ui-ux image">
+          </div>
+        </section>
 
-    Personal Finances
-    Consolidate financial data from multiple sources and categorize transactions up to
-    2 years of history. Analyze reports to reconcile activities in your account.
+        <section class="personal-cards">
+          Banking
+        </section>
 
-    Banking & Coverage
-    With our platform, you can speed up account onboarding and support ongoing payments 
-    for checking, savings, credit card, and brokerage accounts.
+        <section class="ready-to-start">
+          <h2 class="heading-1">Ready to Start?</h2>
+            <div class="schedule_btn_wrap">
+              <input placeholder="Enter Start Typing" />
+              <button>Schedule a Demo</button>
+            </div>
+        </section>
 
-    Consumer Payments
-    It’s easier to set up secure bank payments with us through a flow designed with the 
-    user experience in mind. Customers could instantly authenticate their account.
+        <footer class="footer">
+          <nav class="left-footer">
+            <ul>
+              <li>
+                <a href="/">
+                  <img class="logo" src="./assets/shared/desktop/bg-white-logo.svg" alt="logo">
+                </a>
+              </li>
+              <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+              <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+            </ul>
+          </nav>
+          <nav class="right-footer">
+            <ul>
+              <li>
+                <a href="/">
+                  <img class="logo" src="./assets/shared/desktop/facebook.svg" alt="facebook">
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <img class="logo" src="./assets/shared/desktop/twitter.svg" alt="twitter">
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <img class="logo" src="./assets/shared/desktop/linkedin.svg" alt="linkedin">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
 
-    Ready to start? 
-    Enter email address 
-    Schedule a Demo
-
-    Pricing
-    About
-    Contact
-  </body>
-
+      </main>
+    </body>
 </html>

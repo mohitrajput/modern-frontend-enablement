@@ -18,6 +18,36 @@
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
+const input = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+const fetchCityData = async () => {
+  try {
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    
+    const allCitiesAndStates = data.map(city => city.city + ', ' + city.state);
+
+    input.addEventListener('input', () => {
+      const searchTerm = input.value.toLowerCase();
+      const filteredCitiesAndStates = allCitiesAndStates.filter(item =>
+        item.toLowerCase().includes(searchTerm)
+      );
+
+      suggestions.innerHTML = '';
+
+      filteredCitiesAndStates.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        suggestions.appendChild(li);
+      });
+    });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+fetchCityData();
 </script>
 </body>
 </html>

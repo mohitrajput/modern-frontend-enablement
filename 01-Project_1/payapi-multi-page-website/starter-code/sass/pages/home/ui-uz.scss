@@ -1,0 +1,40 @@
+.ui-ux{
+    grid-row: 5/6;
+    grid-column: 1/-1;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding-left: 11.5rem;
+
+    &::after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        grid-column: 4/-1;
+        grid-row: 1/2;
+        justify-self: end;
+        background-color: $color-circle-light;
+        transform: translate(50%, -7%);
+        border-radius: 50%;
+    }
+
+    &__content{
+        grid-column: 1/4;
+         grid-row: 1/2;
+        .heading-3{
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__img{
+        grid-column: 4/9;
+        grid-row: 1/2;
+        z-index: 10;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

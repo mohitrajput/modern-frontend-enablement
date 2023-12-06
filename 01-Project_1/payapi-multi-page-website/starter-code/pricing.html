@@ -5,64 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Frontend Mentor | PayAPI Website Challenge</title>
   </head>
 
   <body>
-    Pricing
-    About
-    Contact
-    Schedule a Demo
+     <main class="container">
+      <!-- header start -->
+      <header class="header">
+        <div class="header__img">
+            <a href="/">
+              <img class="logo" src="./assets/shared/desktop/logo.svg" alt="logo">
+            </a>
+          </div>
+          <ul class="nav">
+          <img class="icon-close" src="./assets/shared/mobile/close.svg" alt="logo">
+          <div class="nav-inner">
+            <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+          </div>
+           <div class="header-button">
+            <button class="btn">Schedule a demo</button>
+          </div>
+        </ul>
+        <img class="icon-menu" src="./assets/shared/mobile/menu.svg" alt="logo">
+      </header>
+      <!-- header end -->
 
-    Pricing
-
-    Free Plan
-    Build and test using our core set of products with up to 100 API requests
-    $0.00
-    
-    Transactions
-    Auth
-    Identity
-    Investments
-    Assets
-    Liabilities
-    Income
-    Request Access
-
-    Basic Plan
-    Launch your project with unlimited requests and no contractual minimums
-    $249.00
-    
-    Transactions
-    Auth
-    Identity
-    Investments
-    Assets
-    Liabilities
-    Income
-    Request Access
-
-    Premium Plan
-    Get tailored solutions, volume pricing, and dedicated support for your team
-    $499.00
-    
-    Transactions
-    Auth
-    Identity
-    Investments
-    Assets
-    Liabilities
-    Income
-    Request Access
-
-    Ready to start? 
-    Enter email address 
-    Schedule a Demo
-
-    Pricing
-    About
-    Contact
+      <section class="pricing">
+        <h2 class="heading-1">
+          Pricing
+        </h2>
+        <div class="pricing__wrapper">
+          <div class="pricing__wrapper_item">
+            <h4 class="plan_type">
+              Free Plan
+            </h4>
+            <p class="text--light">
+              Build and test using our core set of products with up to 100 API requests 
+            </p>
+            <h3 class="heading-1">$0.00</h3>
+            <div class="plan-wrap">
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Transactions</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Auth</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Identity</p>
+              </div>
+              <div class="plan">
+                <p class="check"></p>
+                <p class="text--light opaque">Investments</p>
+              </div>
+              <div class="plan">
+                <p class="check"></p>
+                <p class="text--light opaque">Assets</p>
+              </div>
+              <div class="plan">
+                <p class="check"></p>
+                <p class="text--light opaque">Liabilities</p>
+              </div>
+              <div class="plan">
+                <p class="check"></p>
+                <p class="text--light opaque">Income</p>
+              </div>
+            </div>
+            <button class="btn">Request Access </button>
+          </div>
+          <div class="pricing__wrapper_item">
+            <h4 class="plan_type">
+              Basic Plan
+            </h4>
+            <p class="text--light">
+              Launch your project with unlimited requests and no contractual minimums 
+            </p>
+            <h3 class="heading-1">$249.00</h3>
+            <div class="plan-wrap">
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Transactions</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Auth</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Identity</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Investments</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Assets</p>
+              </div>
+              <div class="plan">
+                <p class="check"></p>
+                <p class="text--light opaque">Liabilities</p>
+              </div>
+              <div class="plan">
+                <p class="check"></p>
+                <p class="text--light opaque">Income</p>
+              </div>
+            </div>
+            <button class="btn">Request Access </button>
+          </div>
+          <div class="pricing__wrapper_item">
+            <h4 class="plan_type">
+              Premium Plan
+            </h4>
+            <p class="text--light">
+              Get tailored solutions, volume pricing, and dedicated support for your team 
+            </p>
+            <h3 class="heading-1">$499.00</h3>
+            <div class="plan-wrap">
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Transactions</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Auth</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Identity</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Investments</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Assets</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Liabilities</p>
+              </div>
+              <div class="plan">
+                <img class="check" src="./assets/shared/desktop/icon-check.svg" alt="check">
+                <p class="text--light">Income</p>
+              </div>
+            </div>
+            <button class="btn">Request Access </button>
+          </div>
+        </div>
+      </section>
+      <section class="ready-to-start">
+         <h2 class="heading-1">Ready to Start?</h2>
+          <div class="schedule_btn_wrap">
+            <input placeholder="Enter Start Typing" />
+            <button>Schedule a Demo</button>
+          </div>
+      </section>
+       <footer class="footer">
+        <nav class="left-footer">
+          <ul>
+            <li>
+               <a href="/">
+                <img class="logo" src="./assets/shared/desktop/bg-white-logo.svg" alt="logo">
+              </a>
+            </li>
+            <li class="nav__item"><a href="./pricing.html" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="right-footer">
+          <ul>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/facebook.svg" alt="facebook">
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/twitter.svg" alt="twitter">
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img class="logo" src="./assets/shared/desktop/linkedin.svg" alt="linkedin">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </main>
   </body>
 
 </html>
+
+<script>
+  var navigation = document.querySelector(".nav");
+  var openMenu = document.querySelector(".icon-menu");
+  var closeMenu = document.querySelector(".icon-close");
+
+  openMenu.addEventListener('click',function(){
+    navigation.style.right = '0px';
+  })
+  closeMenu.addEventListener('click',function(){
+    navigation.style.right = '-300px';
+  })
+</script>

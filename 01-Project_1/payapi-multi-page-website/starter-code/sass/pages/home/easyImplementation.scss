@@ -1,0 +1,25 @@
+.easy-implementation{
+    // background-color: pink;
+    grid-row: 4/5;
+    grid-column: 2/12;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    // align-content: center;
+
+    &--content{
+        align-self: center;
+        padding-bottom: 3rem;
+        grid-column: 5/8;
+        .heading-3{
+            padding-bottom: 2rem;
+        }
+    }
+
+    &--img{
+        grid-column: 1/5;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
